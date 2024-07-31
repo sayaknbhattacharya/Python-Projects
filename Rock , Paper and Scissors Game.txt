@@ -1,0 +1,78 @@
+Rock , Paper and Scissors Game
+
+from random import randint
+print('========== Play Rock, Paper, Scissors ========== ')
+print("----------------------------------------------------------------------------------")
+#list of choice options
+t = ["Rock", "Paper", "Scissors"]
+#random choice for computer
+comp_choice = t[randint(0,2)]
+player_choice = 1
+computer_win=0
+player_win=0
+player_name=input('Enter Player Name: ')
+print ("Welcome ",player_name,"\n")
+while player_choice == 1:
+#player choses its option
+ player_choice = input("\nPlease chose Rock / Paper / Scissors? ")
+ player_choice.lower()
+ comp_choice = t[randint(0,2)]
+ if player_choice == comp_choice:
+  print("Tie!")
+  print("--------- Score ---------")
+  print("Computer: ",computer_win)
+  print(player_name,":",player_win)
+ elif player_choice == "Rock":
+  if comp_choice == "Paper":
+   print("You lose! computer chose", comp_choice, " and ", player_name," chose", player_choice)
+   computer_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+  else:
+   print("You win! you chose", player_choice, "and computer chose", comp_choice)
+   player_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+ elif player_choice == "Paper":
+  if comp_choice == "Scissors":
+   print("You lose! computer chose", comp_choice, " and ",player_name," chose", player_choice)
+   computer_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+  else:
+   print("You win! ",player_name," chose", player_choice, "computer chose", comp_choice)
+   player_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+ elif player_choice == "Scissors":
+  if comp_choice == "Rock":
+   print("You lose computer chose", comp_choice, " and ", player_name, " chose", player_choice)
+   computer_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+  else:
+   print("You win! ",player_name," chose", player_choice, "computer chose", comp_choice)
+   player_win+=1
+   print("--------- Score ---------")
+   print("Computer: ",computer_win)
+   print(player_name,": ",player_win)
+ else:
+   print("That's not a valid play. Check your spelling!")
+ 
+ choice=input("\nDo you like to play one more time? Type yes / no : ")
+ if choice=='yes':
+  player_choice=1
+ else:
+  player_choice=0
+if player_win>computer_win:
+ print("\nCongratulations! Today's winner is ", player_name)
+elif player_win<computer_win:
+ print("\nToday's winner is Computer")
+else:
+ print("\nIt is tie")
+ print("\nThank you, Have a nice day!")
